@@ -26,7 +26,7 @@ public class AuthController {
 		if (token.isPresent()) {
 			return new ResponseEntity<ViveLibreTokenResponseBody>(token.get(),HttpStatus.OK);
 		} else {
-			return new ResponseEntity<ViveLibreTokenResponseBody>(new ViveLibreTokenResponseBody("heh"), HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<ViveLibreTokenResponseBody>(new ViveLibreTokenResponseBody("error"), HttpStatus.INTERNAL_SERVER_ERROR);
 		}		
 	}
 
