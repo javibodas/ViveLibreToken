@@ -1,0 +1,23 @@
+version: '3.5'
+services:
+  authvivelibre:
+    image: skeet15/auth-vivelibre
+    container_name: auth-vivelibre
+    ports:
+        - "8080:8080"
+    networks:
+        - vivelibre
+  
+  javivivelibre:
+    build:
+        context: .
+        dockerfile: javivivelibre.Dockerfile
+    container_name: javivivelibre
+    ports:
+        - "8081:8081"
+    networks:
+        - vivelibre
+
+networks:
+  vivelibre:
+    external: true
